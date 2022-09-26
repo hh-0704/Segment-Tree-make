@@ -6,7 +6,7 @@
 int* seg_tree_const(int* list, int size) {
 	double temp = size;
 	int height = 0;
-	while (temp > 2) {
+	while (temp >= 2) {
 		temp = temp / 2;
 		height += 1;
 	}
@@ -65,7 +65,7 @@ int* Segtree_update(int* segtree, int start, int end, int i, int d_value, int cu
 
 int print_tree(int* segtree, int size) {
 	int height = 0;
-	while (size > 2) {
+	while (size >= 2) {
 		size = size / 2;
 		height += 1;
 	}
@@ -122,7 +122,7 @@ void main(void) {
 			scanf("%d", &cindex);
 			printf("변경하실 값을 입력해주세요: ");
 			scanf("%d", &change);
-			int d_value = list[cindex] - change;
+			int d_value = change - list[cindex];
 			list[cindex] = change;
 			Segtree_update(segtree, 0, size, cindex, d_value, 0);
 		}
