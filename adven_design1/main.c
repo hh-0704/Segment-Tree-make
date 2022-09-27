@@ -79,8 +79,8 @@ void print_tree(int* segtree, int size) {      /* 세그먼트 트리완성된 것을 출력�
 
 
 void main(void) {      /* 세그먼트 트리의 구현 과제를 실행하여 수행이 잘되는지 확인하기위한 메인함수 */
-	int size = 0;
-	printf("세그먼트 트리의 길이를 정해주세요:");      /* 입력리스트의 길이를 정하는 단계 */
+	int size = 0; 
+	printf("입력 리스트의 길이를 정해주세요:");      /* 입력리스트의 길이를 정하는 단계 */
 	scanf("%d", &size);
 	int *list = malloc(sizeof(int) * size);
 	for (int i = 0; i < size; i++) {
