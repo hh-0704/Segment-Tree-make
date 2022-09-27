@@ -12,7 +12,6 @@ int* seg_tree_const(int* list, int size) {     /* ÁÖ¾îÁø ÀÔ·Â ¸®½ºÆ®¸¦ ¼¼±×¸ÕÆ® 
 	}
 	int t_size = (pow(2, height + 1)) - 1;
 	int *segtree = calloc(t_size, sizeof(int));
-	printf("\n%d", height);
 	construct_tree(list, 0, size-1, segtree, 0);
 	return segtree;
 }
@@ -65,11 +64,9 @@ int* Segtree_update(int* segtree, int size, int find, int d_value) {     /* ÀÔ·Â
 			find_index = i;
 		}
 	}
-	printf("\n%d", find_index);
 	while (find_index >= 1) {
 		segtree[find_index] += d_value;
 		find_index = (find_index - 1) / 2;
-		printf("\n%d", find_index);
 	}
 	segtree[find_index] += d_value;
 	
@@ -140,7 +137,6 @@ void main(void) {      /* ¼¼±×¸ÕÆ® Æ®¸®ÀÇ ±¸Çö °úÁ¦¸¦ ½ÇÇàÇÏ¿© ¼öÇàÀÌ ÀßµÇ´ÂÁö È
 			printf("º¯°æÇÏ½Ç °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");      /* À§ÀÇ ÀÔ·Â¸®½ºÆ® ÀÎµ¦½º °ª¿¡ ¾÷µ¥ÀÌÆ®ÇÒ °ªÀ» ÀÔ·Â¹Ş´Â ±¸Á¶ */
 			scanf("%d", &change);
 			int d_value = change - list[cindex];
-			printf("\n%d\t%d\n", d_value,cindex);
 			Segtree_update(segtree, size,list[cindex], d_value);
 			list[cindex] = change;
 		}
